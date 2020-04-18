@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2020 at 07:47 AM
+-- Generation Time: Apr 18, 2020 at 08:08 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -42,6 +42,21 @@ CREATE TABLE `item` (
 
 INSERT INTO `item` (`RECORD_ID`, `ITEM_CODE`, `ITEM_NAME`, `ITEM_PRICE`, `ITEM_DESCRIPTION`) VALUES
 (1, 'MP_001', 'Iphone 7', '50000', '128 GB, Red');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `RECORD_ID` int(11) NOT NULL,
+  `PAYMENT_ID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
+  `CART_ID` int(11) NOT NULL,
+  `PAYMENT_METHOD` varchar(500) NOT NULL,
+  `TOTAL_AMOUNT` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -103,6 +118,12 @@ ALTER TABLE `item`
   ADD PRIMARY KEY (`RECORD_ID`);
 
 --
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`RECORD_ID`);
+
+--
 -- Indexes for table `shipping`
 --
 ALTER TABLE `shipping`
@@ -123,6 +144,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `item`
   MODIFY `RECORD_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `RECORD_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `shipping`
