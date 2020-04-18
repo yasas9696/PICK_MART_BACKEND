@@ -1,4 +1,4 @@
-package com.myproject.pick_market.user;
+package com.myproject.pick_market.admin;
 
 
 import lombok.Data;
@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "user")
-public class User {
+public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,7 @@ public class User {
     private int recordId;
 
     @Column(name = "ROLE_CODE")
-    private int roleCode = 1;
+    private int roleCode = 2;
 
     @Column(name = "FIRST_NAME")
     private String firstName;
@@ -27,10 +27,10 @@ public class User {
     @Column(name = "ID_NUMBER")
     private String idNumber;
 
-    @Column(name = "USER_USERNAME")
-    private String userUsername;
+    @Column(name = "ADMIN_USERNAME")
+    private String adminUsername;
 
-    @Column(name = "USER_PASSWORD")
-    private String userPassword;
+    @Column(name = "ADMIN_PASSWORD")
+    private String adminPassword;
 
 }
