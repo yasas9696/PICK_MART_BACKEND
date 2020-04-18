@@ -37,7 +37,7 @@ public class ShippingController {
 
     //Get all Shipment details
     @RequestMapping(value = "/getAll")
-    public List<Shipping> getUser() {
+    public List<Shipping> getShipment() {
         return shippingService.getAllShipping();
     }
 
