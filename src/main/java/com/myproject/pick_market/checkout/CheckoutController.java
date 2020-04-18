@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
-@RequestMapping(value = "/user")
+@RequestMapping(value = "/checkout")
 public class CheckoutController {
 
     @Autowired

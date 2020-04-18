@@ -24,7 +24,7 @@ public class PaymentController {
     }
 
 
-    //Add new user
+    //Add new paymnt
     @RequestMapping(value = "/newPayment")
     public Payment save(@RequestBody Payment payment) {
         Payment paymentSave = paymentService.save(payment);
@@ -34,7 +34,7 @@ public class PaymentController {
     }
 
 
-    //Get all items
+    //Get all paymnts
     @RequestMapping(value = "/getAll")
     public List<Payment> getPayment() {
         return paymentService.getAllPayment();

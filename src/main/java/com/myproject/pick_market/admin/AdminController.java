@@ -25,7 +25,7 @@ public class AdminController {
     }
 
 
-    //Add new user
+    //Add new admin
     @RequestMapping(value = "/newAdmin")
     public Admin save(@RequestBody Admin admin) {
         Admin adminSave = adminService.save(admin);
@@ -35,7 +35,7 @@ public class AdminController {
     }
 
 
-    //Get all items
+    //Get all admin
     @RequestMapping(value = "/getAll")
     public List<Admin> getAdmin() {
         return adminService.getAllAdmin();
