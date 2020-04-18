@@ -1,14 +1,20 @@
 package com.myproject.pick_market.payment;
 
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 
 @RestController
 @Slf4j
 @RequestMapping(value = "/payment")
 public class PaymentController {
     @Autowired
-    UserService userService;
+   PaymentService paymentService;
 
 
     //Test
@@ -19,19 +25,19 @@ public class PaymentController {
 
 
     //Add new user
-    @RequestMapping(value = "/newUser")
-    public User save(@RequestBody User user) {
-        User userSave = userService.save(user);
-        log.info("User Added, USER_ID : {} ", userSave.getRecordId());
+    @RequestMapping(value = "/newPayment")
+    public Payment save(@RequestBody Payment payment) {
+        Payment paymentSave = paymentService.save(payment);
+        log.info("Payment Added, USER_ID : {} ", paymentSave.getRecordId());
 
-        return userSave;
+        return paymentSave;
     }
 
 
     //Get all items
     @RequestMapping(value = "/getAll")
-    public List<User> getUser() {
-        return userService.getAllUser();
+    public List<Payment> getPayment() {
+        return paymentService.getAllPayment();
     }
 }
 
